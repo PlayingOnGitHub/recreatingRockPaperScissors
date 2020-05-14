@@ -1,0 +1,198 @@
+main {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-content-here {
+    margin-left: 149px;
+    width: 1200px;
+    height: 1200px;
+    background-color: grey;
+}
+
+.background-image {
+    min-width: 1200px;
+    max-width: 1200px;
+    min-height: 600px;
+    max-height: 600px;
+    width: 1200px;
+    height: 600px;
+    top: 0px;
+    left: 0px;
+}
+
+.start-button {
+    width: 33px;
+    height: 37px;
+    border-radius: 50%;
+    /* background-color: blue; */
+    position: relative;
+    bottom: 375px;
+    left: 925px;
+}
+
+.rock {
+    width: 237px;
+    height: 259px;
+    position: relative;
+    bottom: 561px;
+    left: 54px;
+}
+
+.paper {
+    width: 237px;
+    height: 259px;
+    position: relative;
+    bottom: 559px;
+    left: 51px;
+}
+
+.scissors {
+    width: 237px;
+    height: 259px;
+    position: relative;
+    bottom: 562px;
+    left: 47px;
+}
+
+@keyframes fade-out-item {
+    100% {
+        opacity: 0%;
+    }
+}
+
+#fade-out {
+    animation-name: fade-out-item;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+/* PROBABLY IN THIS ORDER!!!!
+
+add-animation-background
+move-users-choice-to-center
+move-computers-choice-to-center
+highlight-computer
+highlight-player
+move-back-computers-choice
+move-back-rock
+move-back-scissors
+move-back-paper
+
+*/
+
+@keyframes move-users-paper-choice {
+    100% {
+        bottom: 416px;
+        left: -20px;
+        transform: scale(1.8);
+    }
+}
+
+#move-users-paper-to-center {
+    animation-name: move-users-paper-choice;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+
+    z-index: 4;
+
+}
+
+@keyframes move-users-rock-choice {
+    100% {
+        bottom: 416px;
+        left: 209px;
+        transform: scale(1.8);
+    }
+}
+
+#move-users-rock-to-center {
+    animation-name: move-users-rock-choice;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+
+    z-index: 4;
+
+}
+
+@keyframes move-users-scissors-choice {
+    100% {
+        bottom: 416px;
+        left: -265px;
+        transform: scale(1.8);
+    }
+}
+
+#move-users-scissors-to-center {
+    animation-name: move-users-scissors-choice;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+
+    z-index: 4;
+
+}
+
+
+@keyframes move-computers-choice {
+    100% {
+        left: 689px;
+        bottom: 1278px;
+        z-index: 4;
+        transform: scale(1.8);
+        width: 237px;
+        height: 259px;
+    }
+}
+
+#move-computers-choice-to-center {
+    animation-name: move-computers-choice;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+
+    position: relative;
+}
+
+@keyframes add-animation-background-to-screen {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        background-color: black;
+        opacity: 0.92;
+    }
+}
+
+#add-animation-background {
+    animation-name: add-animation-background-to-screen;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    
+    z-index: 3;
+    position: relative;
+    left: 25px;
+    bottom: 850px;
+    width: 1154px;
+    height: 600px;
+}
+
+@keyframes highlight-the-player {
+    100% {
+        width: 426px;
+        height: 469px;
+        position: relative;
+        left: 127px;
+        bottom: 1648px;
+        z-index: 7;
+        background-color: yellow;
+        opacity: 0.5;
+    }
+}
+
+#highlight-player {
+    animation-name: highlight-the-player;
+    animation-duration: 3.5s;
+    animation-fill-mode: forwards;
+}
