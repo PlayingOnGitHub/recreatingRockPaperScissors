@@ -186,19 +186,21 @@ move-back-paper
 
 @keyframes highlight-the-player {
     100% {
-        width: 427px;
-        height: 469px;
-        position: absolute;
-        left: 113px;
-        top: 83px;
-        z-index: 7;
-        background-color: yellow;
         opacity: 0.5;
     }
 }
 
 #highlight-player {
     animation-name: highlight-the-player;
-    animation-duration: 3.5s;
+    animation-duration: 0.5s;
     animation-fill-mode: forwards;
+
+    width: 427px;
+    height: 469px;
+    position: absolute;
+    z-index: 7;
+    background-color: yellow;
+    opacity: 0;
+    left: 122px;
+    top: 78px;
 }
