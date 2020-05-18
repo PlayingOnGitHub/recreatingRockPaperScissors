@@ -9,7 +9,7 @@ main {
 .add-content-here {
     margin-left: 149px;
     width: 1200px;
-    height: 1200px;
+    height: 667px;
     background-color: grey;
     position: relative;
 }
@@ -53,10 +53,10 @@ main {
 }
 
 .scissors {
-    width: 233px;
+    width: 236px;
     height: 259px;
     position: absolute;
-    left: 533px;
+    left: 530px;
     top: 43px;
 }
 
@@ -88,8 +88,8 @@ move-back-paper
 
 @keyframes move-users-choice {
     100% {
-        left: 222px;
-        top: 182px;
+        left: 217px;
+        top: 184px;
         transform: scale(1.8);
     }
 }
@@ -149,7 +149,7 @@ move-back-paper
     left: 25px;
     bottom: 850px;
     width: 1154px;
-    height: 600px;
+    height: 628px;
     top: 20px;
 }
 
@@ -163,15 +163,15 @@ move-back-paper
     animation-name: highlight-the-player;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
-
+    
     width: 427px;
-    height: 469px;
+    height: 467px;
     position: absolute;
     z-index: 7;
     background-color: yellow;
     opacity: 0;
     left: 122px;
-    top: 78px;
+    top: 79px;
 }
 
 @keyframes create-notification {
