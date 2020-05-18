@@ -68,7 +68,7 @@ function animateGame( computersChoiceId, usersChoiceId ) {
     let animationBackground = document.getElementById("animation-background");
         animationBackground.id = "add-animation-background";
     let usersChoice = document.getElementById(usersChoiceId);
-        usersChoice.id = "move-users-"+usersChoiceId+"-to-center";
+        usersChoice.id = "move-users-choice-to-center";
 
     let addContentHere = document.getElementsByClassName("add-content-here")[0];
     let computersChoice = addContentHere.appendChild(document.createElement("img"));

@@ -53,10 +53,10 @@ main {
 }
 
 .scissors {
-    width: 237px;
+    width: 233px;
     height: 259px;
     position: absolute;
-    left: 529px;
+    left: 533px;
     top: 43px;
 }
 
@@ -86,7 +86,7 @@ move-back-paper
 
 */
 
-@keyframes move-users-paper-choice {
+@keyframes move-users-choice {
     100% {
         left: 222px;
         top: 182px;
@@ -94,8 +94,8 @@ move-back-paper
     }
 }
 
-#move-users-paper-to-center {
-    animation-name: move-users-paper-choice;
+#move-users-choice-to-center {
+    animation-name: move-users-choice;
     animation-duration: 2s;
     animation-fill-mode: forwards;
 
@@ -103,52 +103,18 @@ move-back-paper
     z-index: 4;
 
 }
-
-@keyframes move-users-rock-choice {
-    100% {
-        left: 230px;
-        top: 183px;
-        transform: scale(1.8);
-    }
-}
-
-#move-users-rock-to-center {
-    animation-name: move-users-rock-choice;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
-
-    position:absolute;
-    z-index: 4;
-
-}
-
-@keyframes move-users-scissors-choice {
-    100% {
-        left: 216px;
-        top: 183px;
-        transform: scale(1.8);
-    }
-}
-
-#move-users-scissors-to-center {
-    animation-name: move-users-scissors-choice;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
-
-    position:absolute;
-    z-index: 4;
-
-}
-
 
 @keyframes move-computers-choice {
+    0% {
+        opacity: 0.0;
+        left: 1000px;
+        top: 0px;
+    }
     100% {
+        opacity: 1.0;
         left: 699px;
         top: 183px;
-        z-index: 4;
         transform: scale(1.8);
-        width: 237px;
-        height: 259px;
     }
 }
 
@@ -157,6 +123,9 @@ move-back-paper
     animation-duration: 2s;
     animation-fill-mode: forwards;
 
+    z-index: 4;
+    width: 237px;
+    height: 259px;
     position: absolute;
 }
 
