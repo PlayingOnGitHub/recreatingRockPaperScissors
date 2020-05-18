@@ -11,6 +11,7 @@ main {
     width: 1200px;
     height: 1200px;
     background-color: grey;
+    position: relative;
 }
 
 .background-image {
@@ -22,6 +23,7 @@ main {
     height: 600px;
     top: 0px;
     left: 0px;
+    position: absolute;
 }
 
 .start-button {
@@ -37,25 +39,25 @@ main {
 .rock {
     width: 237px;
     height: 259px;
-    position: relative;
-    bottom: 561px;
+    position: absolute;
     left: 54px;
+    top: 43px;
 }
 
 .paper {
     width: 237px;
     height: 259px;
-    position: relative;
-    bottom: 559px;
-    left: 51px;
+    position: absolute;
+    left: 291px;
+    top: 43px;
 }
 
 .scissors {
     width: 237px;
     height: 259px;
-    position: relative;
-    bottom: 562px;
-    left: 47px;
+    position: absolute;
+    left: 529px;
+    top: 43px;
 }
 
 @keyframes fade-out-item {
@@ -86,8 +88,8 @@ move-back-paper
 
 @keyframes move-users-paper-choice {
     100% {
-        bottom: 416px;
-        left: -20px;
+        left: 222px;
+        top: 182px;
         transform: scale(1.8);
     }
 }
@@ -97,14 +99,15 @@ move-back-paper
     animation-duration: 2s;
     animation-fill-mode: forwards;
 
+    position:absolute;
     z-index: 4;
 
 }
 
 @keyframes move-users-rock-choice {
     100% {
-        bottom: 416px;
-        left: 209px;
+        left: 230px;
+        top: 183px;
         transform: scale(1.8);
     }
 }
@@ -114,14 +117,15 @@ move-back-paper
     animation-duration: 2s;
     animation-fill-mode: forwards;
 
+    position:absolute;
     z-index: 4;
 
 }
 
 @keyframes move-users-scissors-choice {
     100% {
-        bottom: 416px;
-        left: -265px;
+        left: 216px;
+        top: 183px;
         transform: scale(1.8);
     }
 }
@@ -131,6 +135,7 @@ move-back-paper
     animation-duration: 2s;
     animation-fill-mode: forwards;
 
+    position:absolute;
     z-index: 4;
 
 }
@@ -138,8 +143,8 @@ move-back-paper
 
 @keyframes move-computers-choice {
     100% {
-        left: 689px;
-        bottom: 1278px;
+        left: 699px;
+        top: 183px;
         z-index: 4;
         transform: scale(1.8);
         width: 237px;
@@ -152,7 +157,7 @@ move-back-paper
     animation-duration: 2s;
     animation-fill-mode: forwards;
 
-    position: relative;
+    position: absolute;
 }
 
 @keyframes add-animation-background-to-screen {
@@ -169,22 +174,23 @@ move-back-paper
     animation-name: add-animation-background-to-screen;
     animation-duration: 2s;
     animation-fill-mode: forwards;
-    
+
     z-index: 3;
-    position: relative;
+    position: absolute;
     left: 25px;
     bottom: 850px;
     width: 1154px;
     height: 600px;
+    top: 20px;
 }
 
 @keyframes highlight-the-player {
     100% {
-        width: 426px;
+        width: 427px;
         height: 469px;
-        position: relative;
-        left: 127px;
-        bottom: 1648px;
+        position: absolute;
+        left: 113px;
+        top: 83px;
         z-index: 7;
         background-color: yellow;
         opacity: 0.5;
