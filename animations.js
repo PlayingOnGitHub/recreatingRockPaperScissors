@@ -21,6 +21,22 @@ function endRound() {
 
 }
 
+function createMatchNotification() {
+    let addContentHere = document.getElementsByClassName("add-content-here")[0];
+    let matchNotificationContainer = addContentHere.appendChild(document.createElement("div"));
+        if ( playerWinsRound == 0 ) {
+            matchNotificationContainer.innerText = "You win the round!";
+        }
+        else if ( playerWinsRound == 1 ) {
+            matchNotificationContainer.innerText = "You tied the round!";
+        }
+        else {
+            matchNotificationContainer.innerText = "You lost the round!";
+        }
+
+        matchNotificationContainer.id = "match-notification";
+}
+
 function highlightWinner() {
     let addContentHere = document.getElementsByClassName("add-content-here")[0];
     let highlightingDiv = addContentHere.appendChild(document.createElement("div"));
@@ -35,7 +51,6 @@ function highlightWinner() {
             highlightingDiv.id = "highlight-computer";
         }
 
-        /* highlightingDiv.addEventListener("animationend", endRound, true ); */
 }
 
 
@@ -75,7 +90,7 @@ function animateGame( computersChoiceId, usersChoiceId ) {
         computersChoice.src = computersChoiceId + ".png";
         computersChoice.id = "move-computers-choice-to-center";
 
-        computersChoice.addEventListener("animationend", highlightWinner, true ); /* could have selected computer or user
+        computersChoice.addEventListener("animationend", () => {highlightWinner(); createMatchNotification()}, true ); /* could have selected computer or user
                                                                                                                   for event listener */
 
 }

@@ -173,3 +173,33 @@ move-back-paper
     left: 122px;
     top: 78px;
 }
+
+@keyframes create-notification {
+    0% {
+        font-size: 0px;
+    }
+
+    100% {
+        font-size: 100px;
+    }
+}
+
+#match-notification {
+
+    animation-name: create-notification;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+
+    position: absolute;
+    z-index: 7;
+    top: 532px;
+    left: 187px;
+    width: 786px;
+    height: 100px;
+    color: yellow;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 0px
+}
