@@ -2,10 +2,40 @@ let playerPoints = 0;
 let computerPoints = 0;
 let playerWinsRound = 2; /* 0 == win, 1 == tie, 2 == lost */
 
-function startNewRound() {
+function startNewRound( usersChoiceId ) {
                  /* Delete all created elements and essentially remake and restart the game */
     /* Now that, that is done.. before adding the background image.. check to see if player wins or if computer wins */
                /* If someone wins, end the game... Might only change image for simplicity */
+    if ( playerWinsRound == 0 ) {
+        /* player wins. Clean up these things */
+        let trophy = document.getElementById("disappear-trophy");
+            trophy.remove();
+        
+    }
+
+    let animationBackground = document.getElementById("fade-animation-background");
+        animationBackground.remove();
+    let moveBackComputersChoice = document.getElementById("move-back-computers-choice");
+        moveBackComputersChoice.remove();
+    let matchNotification = document.getElementById("fade-match-notification");
+        matchNotification.remove();
+
+    let usersChoiceElement = document.getElementById( "move-back-" + usersChoiceId );
+    let recreateUserElement = document.createElement("img");
+        recreateUserElement.className = usersChoiceId;
+        recreateUserElement.id = usersChoiceId;
+        recreateUserElement.src = usersChoiceId + ".png";
+
+    usersChoiceElement.replaceWith(recreateUserElement);
+
+    let addContentHere = document.getElementsByClassName("add-content-here")[0];
+    let recreateAnimationBackground = document.createElement("div");
+        recreateAnimationBackground.id = "animation-background";
+    addContentHere.appendChild(recreateAnimationBackground);
+
+    startMatch();
+
+    
 }
 
 function endRound() {
@@ -15,9 +45,37 @@ function endRound() {
     let usersChoiceFinalAnimation = "move-back-" + usersChoice;
     
     usersChoiceElement.id = usersChoiceFinalAnimation;
-    computersChoice.id = "move-back-computers-choice";
 
-    usersChoiceElement.addEventListener("animationend", startNewRound, true );
+    let recreateComputersChoiceElement = document.createElement("img");
+        recreateComputersChoiceElement.src = computersChoice.src
+    computersChoice.replaceWith(recreateComputersChoiceElement);
+        recreateComputersChoiceElement.id = "move-back-computers-choice";
+
+    if ( playerWinsRound == 0 ) {
+        let playerHighlights = document.getElementById("highlight-player");
+            playerHighlights.remove();
+
+        let trophy = document.getElementById("add-trophy");
+            trophy.id = "disappear-trophy";
+    }
+    else if ( playerWinsRound == 1 ) {
+        let tieHighlights = document.getElementById("highlight-tie");
+            tieHighlights.remove();
+    }
+    else {
+        let computerHighlights = document.getElementById("highlight-computer");
+            computerHighlights.remove();
+    }
+
+    let animationBackground = document.getElementById("add-animation-background");
+        animationBackground.id = "fade-animation-background";
+
+    let matchNotification = document.getElementById("match-notification");
+    let recreateNotification = document.createElement("div");
+        recreateNotification.id = "fade-match-notification";
+        matchNotification.replaceWith(recreateNotification);
+
+    animationBackground.addEventListener("animationend", () => {startNewRound(usersChoice);}, true );
 
 }
 
@@ -46,17 +104,17 @@ function createMatchNotification() {
         }
 
         matchNotificationContainer.id = "match-notification";
+        matchNotificationContainer.addEventListener("animationend", endRound, true);
 }
 
 function highlightWinner() {
     let addContentHere = document.getElementsByClassName("add-content-here")[0];
     let highlightingDiv = addContentHere.appendChild(document.createElement("div"));
-        /* highlightingDiv.addEventListener("animationend", endRound, true ); add here actually! */
         if ( playerWinsRound == 0 ) {
             highlightingDiv.id = "highlight-player";
         }
         else if ( playerWinsRound == 1 ) {
-            highlightingDiv.id = "";
+            highlightingDiv.id = "highlight-tie";
         }
         else {
             highlightingDiv.id = "highlight-computer";
@@ -103,6 +161,7 @@ function animateGame( computersChoiceId, usersChoiceId ) {
 
         computersChoice.addEventListener("animationend", () => {highlightWinner(); createMatchNotification();createTrophy();}, true ); /* could have selected computer or user
                                                                                                                   for event listener */
+
 
 }
 
@@ -161,6 +220,8 @@ function determineWhoWinsOnClick() {
                                             animateGame( computersChoice, "paper" ); }, true );
     scissors.addEventListener("click", () => { computersChoice = humanVsComputer( "scissors" );
                                                animateGame( computersChoice, "scissors" ); }, true );
+
+
 
 }
 

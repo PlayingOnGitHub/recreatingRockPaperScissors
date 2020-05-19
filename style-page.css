@@ -227,3 +227,178 @@ move-back-paper
     top: -39px;
     left: 189px;
 }
+
+@keyframes move-computer-out {
+    0% {
+        opacity: 1.0;
+        left: 699px;
+        top: 183px;
+        transform: scale(1.8);
+    }
+    100% {
+        opacity: 0.0;
+        left: 1000px;
+        top: 0px;
+        transform: scale(1.0);
+    }
+}
+
+#move-back-computers-choice {
+
+    animation-name: move-computer-out;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+
+    z-index: 4;
+    width: 237px;
+    height: 259px;
+    position: absolute;
+}
+
+@keyframes move-players-rock-back-to-starting-position {
+    0% {
+        left: 217px;
+        top: 184px;
+        transform: scale(1.8);
+    }
+
+    100% {
+        left: 54px;
+        top: 43px;
+        transform: scale(1.0);
+    }
+}
+
+#move-back-rock {
+
+    animation-name: move-players-rock-back-to-starting-position;
+    animation-duration: 1.5s;
+    animation-fill-mode: fowards;
+
+    position:absolute;
+    z-index: 4;
+}
+
+@keyframes move-players-paper-back-to-starting-position {
+    0% {
+        left: 217px;
+        top: 184px;
+        transform: scale(1.8);
+    }
+
+    100% {
+        left: 291px;
+        top: 43px;
+        transform: scale(1.0);
+    }
+}
+
+#move-back-paper {
+
+    animation-name: move-players-paper-back-to-starting-position;
+    animation-duration: 1.5s;
+    animation-fill-mode: fowards;
+
+    position:absolute;
+    z-index: 4;
+}
+
+@keyframes move-players-scissors-back-to-starting-position {
+    0% {
+        left: 217px;
+        top: 184px;
+        transform: scale(1.8);
+    }
+
+    100% {
+        left: 530px;
+        top: 43px;
+        transform: scale(1.0);
+    }
+}
+
+#move-back-scissors {
+
+    animation-name: move-players-scissors-back-to-starting-position;
+    animation-duration: 1.5s;
+    animation-fill-mode: fowards;
+
+    position:absolute;
+    z-index: 4;
+}
+
+@keyframes fade-the-background-out {
+    0% {
+        opacity: 0.92;
+    }
+    100% {
+        opacity: 0.0;
+    }
+}
+
+#fade-animation-background {
+    
+    animation-name: fade-the-background-out;
+    animation-duration: 2.0s;
+    animation-fill-mode: forwards;
+
+    z-index: 3;
+    position: absolute;
+    left: 25px;
+    bottom: 850px;
+    width: 1154px;
+    height: 628px;
+    top: 20px;
+}
+
+@keyframes fade-match-text {
+    0% {
+        opacity: 1.0;
+    }
+
+    100% {
+        opacity: 0.0;
+    }
+}
+
+#fade-match-notification {
+    animation-name: fade-match-text;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+
+    position: absolute;
+    z-index: 7;
+    top: 543px;
+    left: 187px;
+    width: 786px;
+    height: 100px;
+    color: yellow;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 100px;
+}
+
+@keyframes fade-trophy-out {
+    0% {
+        opacity: 1.0;
+    }
+
+    100% {
+        opacity: 0.0;
+    }
+}
+
+#disappear-trophy {
+    animation-name: fade-trophy-out;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+
+    height: 600px;
+    width: 800px;
+    z-index: 6;
+    position: absolute;
+    top: -39px;
+    left: 189px;
+}
