@@ -21,6 +21,17 @@ function endRound() {
 
 }
 
+function createTrophy() {
+
+    if (playerWinsRound == 0 ) {
+        let addContentHere = document.getElementsByClassName("add-content-here")[0];
+        let trophy = addContentHere.appendChild(document.createElement("img"));
+            trophy.src = "player-wins-a-trophy.png";
+            trophy.id = "add-trophy";
+    }
+
+}
+
 function createMatchNotification() {
     let addContentHere = document.getElementsByClassName("add-content-here")[0];
     let matchNotificationContainer = addContentHere.appendChild(document.createElement("div"));
@@ -90,7 +101,7 @@ function animateGame( computersChoiceId, usersChoiceId ) {
         computersChoice.src = computersChoiceId + ".png";
         computersChoice.id = "move-computers-choice-to-center";
 
-        computersChoice.addEventListener("animationend", () => {highlightWinner(); createMatchNotification()}, true ); /* could have selected computer or user
+        computersChoice.addEventListener("animationend", () => {highlightWinner(); createMatchNotification();createTrophy();}, true ); /* could have selected computer or user
                                                                                                                   for event listener */
 
 }
