@@ -7,8 +7,8 @@ main {
 }
 
 .add-content-here {
-    margin-left: 149px;
-    width: 1200px;
+    margin-left: 150px;
+    min-width: 1200px;
     height: 667px;
     background-color: grey;
     position: relative;
@@ -192,7 +192,7 @@ move-back-paper
 
     position: absolute;
     z-index: 7;
-    top: 532px;
+    top: 543px;
     left: 187px;
     width: 786px;
     height: 100px;
